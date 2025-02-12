@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vintara Staffs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body background="fondo.gif">
+    <div class="container">
+        <h1>Acceso Al Portal De Staffs</h1>
+        <input type="password" id="codigo" placeholder="Codigo">
+        <button onclick="verificarCodigo()">Ingresar</button>
+        <p id="mensaje"></p>
+    </div>
+
+    <script>
+        function encriptar(texto) {
+            return btoa(texto); // Base64 simple
+        }
+        
+        function verificarCodigo() {
+            const codigoCorrecto = "MjM0Mg=="; //
+            const inputCodigo = btoa(document.getElementById("codigo").value);
+        
+            if (inputCodigo === codigoCorrecto) {
+                sessionStorage.setItem("accesoPermitido", "true");
+                window.location.href = "home.html";
+            } else {
+                document.getElementById("mensaje").textContent = "El código no es correcto";
+                document.getElementById("mensaje").style.color = "red";
+            }
+        }
+        </script>
+</body>
+</html>
