@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipo Vintara</title>
+    <link rel="stylesheet" href="equipo.css">
+</head>
+<body background="fondo.gif">
+    <script>
+        if (sessionStorage.getItem("accesoPermitido") !== "true") {
+            window.location.href = "index.html";
+        }
+    </script>
+
+    <div class="sidebar">
+        <h2>Vintara Staffs</h2>
+        <ul>
+            <li><a href="home.html">🏠 Inicio</a></li>
+            <li><a href="recursos.html">📁 Recursos</a></li>
+            <li class="submenu">
+                <a href="#">📜 Guías ▾</a>
+                <ul class="submenu-content">
+                    <li><a href="discord.html">💬 Discord</a></li>
+                    <li><a href="minecraft.html">⛏️ Minecraft</a></li>
+                </ul>
+            </li>
+            <li><a href="anuncios.html">📢 Anuncios</a></li>
+            <li><a href="equipo.html" class="active">👥 Equipo</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h1>👥 EQUIPO ACTUAL DE VINTARA</h1>
+        <p class="subtext">Descubre a todas las personas detrás de Vintara</p>
+
+        <div class="equipo-section">
+            <h2>👑 FUNDADOR 👑</h2>
+            <p class="nombre">Ynex</p>
+            <img src="ynex.png" alt="Ynex">
+        </div>
+
+        <div class="equipo-section">
+            <h2>🛡️ SUPERVISOR 🛡️</h2>
+            <p class="nombre">xWebnic</p>
+            <img src="xwebnic.png" alt="xWebnic">
+        </div>
+
+        <div class="equipo-section">
+            <h2>⚠️ ADMINISTRADOR ⚠️</h2>
+            <p class="nombre">Sin Personal</p>
+        </div>
+
+        <div class="equipo-section">
+            <h2>⚔️ SR. MODERADORES ⚔️</h2>
+            <p class="nombre">FeliHz & Plaices</p>
+            <img src="felihz.png" alt="FeliHz">
+            <img src="plaices.png" alt="Plaices">
+        </div>
+
+        <div class="equipo-section">
+            <h2>🛠️ MODERADOR 🛠️</h2>
+            <p class="nombre">Azzazel</p>
+            <img src="azzazel.png" alt="Azzazel">
+        </div>
+
+        <p class="agradecimiento">🎉 ¡Muchas gracias a todos por su apoyo! 🎉</p>
+    </div>
+
+    <script>
+        document.querySelectorAll('.submenu > a').forEach(menu => {
+            menu.addEventListener('click', function (e) {
+                e.preventDefault();
+                this.nextElementSibling.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anuncios</title>
+    <link rel="stylesheet" href="anuncios.css">
+</head>
+<body>
+    <script>
+        if (sessionStorage.getItem("accesoPermitido") !== "true") {
+            window.location.href = "index.html";
+        }
+    </script>
+
+    <div class="sidebar">
+        <h2>Vintara Staffs</h2>
+        <ul>
+            <li><a href="home.html">🏠 Inicio</a></li>
+            <li><a href="recursos.html">📁 Recursos</a></li>
+            <li class="submenu">
+                <a href="#">📜 Guías ▾</a>
+                <ul class="submenu-content">
+                    <li><a href="discord.html">💬 Discord</a></li>
+                    <li><a href="minecraft.html">⛏️ Minecraft</a></li>
+                </ul>
+            </li>
+            <li><a href="anuncios.html" class="active">📢 Anuncios</a></li>
+            <li><a href="equipo.html">👥 Equipo</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h1>📢 ANUNCIOS Y CAMBIOS EN EL SERVIDOR</h1>
+        <p class="subtext">Aquí se publicarán los anuncios y cambios en el servidor.</p>
+        
+        <div class="anuncio">
+            <p class="fecha">09/02/2025</p>
+            <p class="mensaje">ABRIMOS EL PORTAL DE STAFFS</p>
+            <img src="portal.png" alt="Portal de Staffs">
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.submenu > a').forEach(menu => {
+            menu.addEventListener('click', function (e) {
+                e.preventDefault();
+                this.nextElementSibling.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

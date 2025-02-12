@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guías | Discord</title>
+    <link rel="stylesheet" href="discord.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('fondo.gif');
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            padding: 20px;
+            min-height: 100vh; /* Asegura que el contenido siempre ocupe toda la altura */
+        }
+
+        .sancion {
+            margin-bottom: 20px;
+        }
+
+        .sancion h2 {
+            margin: 10px 0;
+        }
+
+        .verde {
+            color: #42f557;
+        }
+
+        .amarillo {
+            color: #eeff00;
+        }
+
+        .rojo {
+            color: #ff1500;
+        }
+
+        .comandos {
+            margin-top: 30px;
+        }
+
+        .comando {
+            margin: 5px 0;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            width: 250px;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #2f2f2f;
+            color: white;
+            padding: 20px;
+            overflow: auto;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .submenu-content {
+            list-style-type: none;
+            padding-left: 20px;
+            display: none;
+        }
+
+        .submenu:hover .submenu-content {
+            display: block;
+        }
+
+        .active {
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        if (sessionStorage.getItem("accesoPermitido") !== "true") {
+            window.location.href = "index.html";
+        }
+    </script>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Menú</h2>
+        <ul>
+            <li><a href="home.html">🏠 Inicio</a></li>
+            <li><a href="recursos.html">📂 Recursos</a></li>
+            <li class="submenu">
+                <a href="#">📘 Guías ▼</a>
+                <ul class="submenu-content">
+                    <li><a href="discord.html" class="active">Discord</a></li>
+                    <li><a href="minecraft.html">Minecraft</a></li>
+                </ul>
+            </li>
+            <li><a href="anuncios.html">📢 Anuncios</a></li>
+            <li><a href="equipo.html">👥 Equipo</a></li>
+        </ul>
+    </div>
+
+    <!-- Main content -->
+    <div class="content">
+        <h1>🛑 CONFORMACIÓN DE SANCIONES 🛑</h1>
+        <p class="subtext">Aquí encontrarás la sanción correspondiente según la regla quebrantada. Es importante seguir esta jerarquía al aplicar sanciones.</p>
+
+        <div class="sancion">
+            <h2>1. Faltas de Respeto</h2>
+            <p><span class="verde">Warneo > Warneo > Warneo ></span> <span class="amarillo">Muteo (1h) > Muteo (24h) ></span> <span class="rojo">Baneo</span></p>
+        </div>
+
+        <div class="sancion">
+            <h2>2. Suplantación de Identidad</h2>
+            <p><span class="rojo">Baneo</span></p>
+        </div>
+
+        <div class="sancion">
+            <h2>3. Uso Incorrecto de Canales</h2>
+            <p><span class="verde">Warneo > Warneo > Warneo ></span> <span class="amarillo">Muteo (30m) > Muteo (1h) > Muteo (24h) ></span> <span class="rojo">Baneo</span></p>
+        </div>
+
+        <div class="sancion">
+            <h2>4. Evadir Sanción</h2>
+            <p><span class="rojo">Misma sanción que la cuenta principal</span></p>
+        </div>
+
+        <div class="sancion">
+            <h2>5. Publicidad</h2>
+            <p><span class="verde">Warneo > Warneo ></span> <span class="amarillo">Muteo (1h) > Muteo (6h) > Muteo (24h) ></span> <span class="rojo">Baneo</span></p>
+        </div>
+
+        <div class="sancion">
+            <h2>6. Contenido Explícito</h2>
+            <p><span class="amarillo">Muteo (12h) > Muteo (24h) ></span> <span class="rojo">Baneo</span></p>
+        </div>
+
+        <div class="sancion">
+            <h2>7. Spamming y Flooding</h2>
+            <p><span class="verde">Warneo > Warneo > Warneo ></span> <span class="amarillo">Muteo (1h) > Muteo (6h) > Muteo (24h) ></span> <span class="rojo">Baneo</span></p>
+        </div>
+
+        <div class="sancion">
+            <h2>8. Estafar</h2>
+            <p><span class="rojo">Baneo</span></p>
+        </div>
+
+        <div class="sancion">
+            <h2>9. Directrices de Discord</h2>
+            <p><span class="rojo">Baneo</span></p>
+        </div>
+
+        <h1>🌐 COMANDOS DE MODERACIÓN 🌐</h1>
+        <p class="subtext">Aquí encontrarás los comandos de moderación para el servidor de Discord. Es obligatorio usar @UnbelievaBoat.</p>
+
+        <div class="comandos">
+            <h2>⚠️ Warneos</h2>
+            <p class="comando">$warn [@usuario] [razón]</p>
+
+            <h2>🔇 Muteos</h2>
+            <p class="comando">$mute [@usuario] [tiempo] [razón]</p>
+
+            <h2>🔨 Baneos</h2>
+            <p class="comando">$ban [@usuario] [razón]</p>
+
+            <h2>📜 Revisar Sanciones</h2>
+            <p class="comando">$punishments [@usuario]</p>
+        </div>
+    </div>
+</body>
+</html>
